@@ -5,8 +5,8 @@
   "scripts": {
     "start": "pm2 startOrGracefulReload process.dev.json --env local",
     "restart": "pm2 startOrRestart process.dev.json --env local",
-    "start:test": "pm2 start process.test.json --env test",
-    "restart:test": "pm2 startOrGracefulReload process.test.json --env test",
+    "start:qa": "pm2 start process.qa.json --env qa",
+    "restart:qa": "pm2 startOrGracefulReload process.qa.json --env qa",
     "start:prod": "pm2 start process.prod.json  --env prod",
     "restart:prod": "pm2 startOrGracefulReload process.prod.json --env prod"
   },
@@ -15,7 +15,7 @@
     "axios": "^0.15.3",
     "babel-cli": "^6.24.0",
     "babel-core": "^6.24.0",
-    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-add-module-exporths": "^0.2.1",
     "babel-polyfill": "^6.23.0",
     "babel-preset-es2015": "^6.24.0",
     "babel-preset-stage-3": "^6.22.0",

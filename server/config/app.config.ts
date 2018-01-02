@@ -4,9 +4,9 @@ console.log('~~~~~~~~ env: ' + env + ' ~~~~~~~')
 
 const common = {};
 
-const test = {
+const qa = {
     port: '3002',
-    baseURL: 'http://54.222.196.128:8081/',
+    baseURL: 'http://112.74.128.90:8081/',
 };
 
 const pro = {
@@ -24,8 +24,8 @@ switch (env) {
     case "production":
         config = Object.assign(pro, common);
         break;
-    case "test":
-        config = Object.assign(test, common);
+    case "qa":
+        config = Object.assign(qa, common);
         break;
     default:
         config = Object.assign(local, common);

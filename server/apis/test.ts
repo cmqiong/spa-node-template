@@ -14,7 +14,7 @@ class TestApi {
         const token = await http.post(this.req, '/api/v1/uac/oauth/token', {
             data,
             headers: {
-                'Authorization': 'Basic c29wX2FwcF9wbGF0Zm9ybTpZWEJ3Y0d4aGRHWnZjbTFmYzJWamNtVjA=',
+                'Authorization': 'Basic c29wOjU3MUQyOTZCMzJGOTM1NzRFN0U2N0ZBMTA0NTBBMEQ4',
             },
         }, 'form');
         return token;
