@@ -15,8 +15,9 @@ const pro = {
 };
 
 const local = {
-    port: '1500',
-    baseURL: 'http://192.168.5.237:8081/api/',
+    port: '3001',
+    // baseURL: 'http://wx.dev.sunbar.cn:8081/',
+    baseURL: 'http://112.74.128.90:8081/',
 };
 
 let config;
