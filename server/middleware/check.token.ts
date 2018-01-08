@@ -4,12 +4,12 @@ import * as util from '../libs/util';
 import AuthApi from '../apis/auth';
 
 export default async function (req:Request, res:Response, next:NextFunction) {
-  if (req.cookies['authorization']) {
-      console.log('------ cookies里的token尚未过期 ----');
-      console.log(req.cookies['Authorization']);
-      req.headers['Authorization'] = req.cookies['authorization'];
-      next();
-  } else {
+  // if (req.cookies['authorization']!==undefined) {
+  //     console.log('------ cookies里的token尚未过期 ----');
+  //     console.log(req.cookies['Authorization']);
+  //     req.headers['Authorization'] = req.cookies['authorization'];
+  //     next();
+  // } else {
       try {
           const ret = await new AuthApi(req).getClientToken({ grant_type: 'client_credentials' });
           // res设置cookie.authorization
@@ -25,5 +25,5 @@ export default async function (req:Request, res:Response, next:NextFunction) {
       } catch (error) {
           next(error);
       }
-  }
+  // }
 };
