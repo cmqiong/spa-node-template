@@ -1,12 +1,15 @@
 import * as express from 'express';
 import { Response, Request, NextFunction } from 'express';
 import * as fs from 'fs';
+import * as cors from 'cors';
 import { getRedirectUrl, getFullUrl } from './libs/util';
 import errorTip from './config/error.config';
 
 const app = express();
 app.set('trust proxy', true);
 require('./config/init')(app, express);
+
+app.use(cors());
 
 app.use('*', (req: Request, res: Response, next: NextFunction) => {
   res.project = req.baseUrl || ' ';
