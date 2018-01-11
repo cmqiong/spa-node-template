@@ -13,7 +13,7 @@ router.get('/question/list', checkToken, async function (req: Request, res: Resp
   }
 });
 
-router.get('/question/delete', checkToken, async function (req: Request, res: Response, next: NextFunction) {
+router.delete('/question/delete', checkToken, async function (req: Request, res: Response, next: NextFunction) {
     try {
         const result = await new QuestionApi(req).deleteItem(req.body);
         res.send(result.data);
@@ -22,7 +22,7 @@ router.get('/question/delete', checkToken, async function (req: Request, res: Re
     }
 });
 
-router.get('/question/modify', checkToken, async function (req: Request, res: Response, next: NextFunction) {
+router.patch('/question/modify', checkToken, async function (req: Request, res: Response, next: NextFunction) {
     try {
         const result = await new QuestionApi(req).modifyItem(req.body);
         res.send(result.data);
@@ -31,7 +31,7 @@ router.get('/question/modify', checkToken, async function (req: Request, res: Re
     }
 });
 
-router.get('/question/create', checkToken, async function (req: Request, res: Response, next: NextFunction) {
+router.post('/question/create', checkToken, async function (req: Request, res: Response, next: NextFunction) {
     try {
         const result = await new QuestionApi(req).createItem(req.body);
         res.send(result.data);

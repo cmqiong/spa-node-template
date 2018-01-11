@@ -38,10 +38,10 @@ function ajax(req: Request, options: any = {}) {
     const method = options.method || 'get';
     const data = options.data || {};
     const url = method == 'get' ? generatorUrl(options.url, data) : options.url;
-    const headers = req.headers;
-    if (!isNullOrUndefined(options.headers['Authorization'])) {
-        headers['Authorization'] = options.headers['Authorization']
-    }
+    const headers = Object.assign(req.headers, options.headers);
+    // if (!isNullOrUndefined(options.headers['Authorization'])) {
+    //     headers['Authorization'] = options.headers['Authorization']
+    // }
     const httpObj = {
         url,
         method,
@@ -78,9 +78,9 @@ export function post(req: Request, url: string, options: any = {}, type?: string
         'data': 'application/form-data',
         'json': 'application/json;charset=UTF-8'
     };
-    const headers = Object.assign({
+    const headers = Object.assign(options.headers, {
         'Content-Type': contentType[type]
-    }, options.headers || {});
+    });
 
     const data = options.data || {};
 

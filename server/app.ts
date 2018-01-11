@@ -12,7 +12,7 @@ require('./config/init')(app, express);
 app.use(cors());
 
 app.use('*', (req: Request, res: Response, next: NextFunction) => {
-  res.project = req.baseUrl || ' ';
+  res.project = req.baseUrl || '';
   next();
 });
 
